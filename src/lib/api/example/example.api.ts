@@ -4,8 +4,8 @@ import { ExampleRequest, ExampleResponse } from './example.types';
 export const requests = {
   init: (queryObject: ExampleRequest): Endpoint<ExampleResponse> => ({
     data: {
-      name: 'authApi.login',
-      url: `api/${version}/shop/authentication-token`,
+      name: 'api.example',
+      url: `api/${version}/example`,
       method: 'GET',
       params: queryObject,
     },
