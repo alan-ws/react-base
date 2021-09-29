@@ -1,3 +1,11 @@
+/*
+refactoring this file to use Web API fetch whilst utilising TypeScript
+will include optional GraphQL requests
+GraphQL requests will likely be handle via the new fetch work
+Example to work off and improve: https://kentcdodds.com/blog/using-fetch-with-type-script
+https://developer.mozilla.org/en-US/docs/Web/API/fetch
+ */
+
 import axios, { AxiosRequestConfig } from 'axios';
 import { handleNetworkError } from '../utils/errorHandling';
 import Cookies from 'js-cookie';
