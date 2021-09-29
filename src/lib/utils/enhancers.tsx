@@ -1,6 +1,10 @@
 import { Profiler, ProfilerOnRenderCallback } from 'react';
 
 export function withProfiler(Component: () => JSX.Element, id: string) {
+  if (process.env.NODE_ENV !== 'development') {
+    return Component;
+  }
+
   const WrappedComponent = () => {
     const callback: ProfilerOnRenderCallback = (
       id,
