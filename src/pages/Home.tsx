@@ -4,7 +4,7 @@ import { Title } from '../components/Typography/Typography';
 import { ActionButton } from '../components/Button/Button';
 import { uiSlice } from '../lib/state/ui/ui.slice';
 import { RootState } from '../lib/state/store';
-import { withProfiler } from '../lib/utils/enhancers';
+import { withMetaTags, withProfiler } from '../lib/utils/enhancers';
 import AppLayoutLoader from '../components/Loading/AppLayoutLoader';
 
 function Home() {
@@ -35,4 +35,4 @@ function Home() {
   );
 }
 
-export default withProfiler(Home, 'home');
+export default withMetaTags(withProfiler(Home, 'home'), { title: 'WE ARE HOME' });
