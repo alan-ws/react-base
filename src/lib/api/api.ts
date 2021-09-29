@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { handleNetworkError } from '../utils/errorHandling';
 import Cookies from 'js-cookie';
+import { CoreRequest, RequestHeaders, ResponseReturn } from '../types/api';
 
 export type Endpoint<T> = {
   data: CoreRequest;
