@@ -8,9 +8,9 @@ declare global {
     name: string;
     url: string;
     method: Method;
-    headers: undefined;
-    params: undefined;
-    data: undefined;
+    headers?: any;
+    params?: any;
+    data?: any;
     responseType?: ResponseType;
   };
   type ResponseReturn<Data> = RequestResponse<Data> & RequestError;

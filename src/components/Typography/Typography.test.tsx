@@ -4,8 +4,8 @@
 
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { Title } from '../components/Typography/Typography';
-import { style } from '../lib/styleTheme';
+import { Title } from './Typography';
+import { style } from '../../lib/styleTheme';
 
 describe('Title', () => {
   it('renders title', async () => {

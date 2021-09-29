@@ -1,15 +1,16 @@
 const path = require('path');
+const zlib = require('zlib');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.tsx'),
   output: {
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
     publicPath: '/',
   },
-  mode: 'development',
   module: {
     rules: [
       {
@@ -46,6 +47,11 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
@@ -55,6 +61,19 @@ module.exports = {
       template: path.resolve(__dirname, './public/index.html'),
     }),
     new CleanWebpackPlugin(),
+    new CompressionPlugin({
+      filename: '[path][base].br',
+      algorithm: 'brotliCompress',
+      test: /\.(js|css|html|svg)$/,
+      compressionOptions: {
+        params: {
+          [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+        },
+      },
+      threshold: 10240,
+      minRatio: 0.8,
+      deleteOriginalAssets: false,
+    }),
   ],
   watchOptions: {
     aggregateTimeout: 200,

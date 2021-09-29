@@ -4,9 +4,9 @@
 
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { ActionButton } from '../components/Button/Button';
+import { ActionButton } from './Button';
 import { Provider } from 'react-redux';
-import { makeTestStore } from './store';
+import { makeTestStore } from '../../lib/testing/store';
 
 describe('Button', () => {
   const store = makeTestStore();
