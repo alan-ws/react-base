@@ -1,3 +1,4 @@
+import { RequestError } from '../types/api';
 // change console.log with whatever error handling functions
 
 export const handleError = (error: unknown): void => {

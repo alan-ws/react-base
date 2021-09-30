@@ -50,11 +50,11 @@ interface ITags {
   metaTags?: IMetaTags;
 }
 
+// TODO: refactor to be simplified and flexible
 export function withMetaTags(Component: () => JSX.Element, tags: ITags) {
   const Wrapped = () => {
-    const doc = document.getElementsByTagName('head');
-
     useEffect(() => {
+      const doc = document.getElementsByTagName('head');
       doc.item(0).getElementsByTagName('title').item(0).innerText = tags.title;
 
       const descriptionNode: HTMLMetaElement = document.createElement('meta');
