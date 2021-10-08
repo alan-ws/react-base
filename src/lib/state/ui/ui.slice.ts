@@ -1,18 +1,18 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface UiStore {
-  consoleLogValue?: string;
+export interface IStore {
+  iconUri?: string;
 }
 
-export const uiSliceInitialState: UiStore = {};
+export const initialStore: IStore = {};
 
 export const uiSlice = createSlice({
   name: 'ui',
-  initialState: uiSliceInitialState,
+  initialState: initialStore,
   reducers: {
-    initiateConsoleLog(): void {},
-    setConsoleLogValue(state, action: PayloadAction<string>): void {
-      state.consoleLogValue = action.payload;
+    getIcon(_, action: PayloadAction<{ name?: string }>) {},
+    setIconUri(state, action: PayloadAction<string>) {
+      state.iconUri = action.payload;
     },
   },
 });

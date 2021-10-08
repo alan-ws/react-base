@@ -11,7 +11,8 @@
     "test": "jest --watch",
     "analyse": "webpack --profile --json > stats.json",
     "cosmos": "cosmos",
-    "cosmos:export": "cosmos-export"
+    "cosmos:export": "cosmos-export",
+    "rfc": "node src/lib/utils/local_tools.js"
   },
   "keywords": [],
   "author": "",
@@ -37,8 +38,10 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.15.0",
     "@babel/runtime": "^7.15.4",
+    "@testing-library/dom": "^8.7.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
+    "@testing-library/user-event": "^13.2.1",
     "@types/js-cookie": "^2.2.7",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",

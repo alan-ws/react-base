@@ -81,8 +81,6 @@ export function withMetaTags(Component: () => JSX.Element, tags: ITags) {
       ognImgNode.setAttribute('property', 'og:image');
       ognImgNode.setAttribute('content', tags.metaTags?.og?.image);
       doc.item(0).appendChild(ognImgNode);
-
-      console.log(doc.item(0));
     }, []);
 
     return <Component />;

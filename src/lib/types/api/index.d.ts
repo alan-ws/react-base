@@ -2,8 +2,9 @@ import { AxiosError, AxiosResponse, Method, ResponseType } from 'axios';
 
 type RequestResponse<T> = { response: AxiosResponse<T> | null };
 type RequestError = { error: AxiosError | null };
+type RequestName = 'icon' | 'auth';
 type CoreRequest = {
-  name: string;
+  name: RequestName;
   url: string;
   method: Method;
   headers?: any;

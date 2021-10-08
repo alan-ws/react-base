@@ -11,20 +11,19 @@ import { handleNetworkError } from '../utils/errorHandling';
 import Cookies from 'js-cookie';
 import { CoreRequest, RequestHeaders, ResponseReturn } from '../types/api';
 
-export type Endpoint<T> = {
+export type HttpEndpoint<T> = {
   data: CoreRequest;
   fetch: () => () => Promise<ResponseReturn<T>>;
 };
 
-export const version = 'v2';
-const baseURL = '';
+const baseURL = 'http://localhost:3005/';
 
 export const defaultHeaders: RequestHeaders = {
-  Accept: 'application/ld+json',
+  Accept: 'application/json',
   'Content-Type': 'application/json',
 };
 
-export const request = async <ResponseData>(
+export const httpRequest = async <ResponseData>(
   requestData: CoreRequest,
   jwtTokenOverride?: string,
 ): Promise<ResponseReturn<ResponseData>> => {
@@ -56,3 +55,5 @@ export const request = async <ResponseData>(
       return { response: null, error };
     });
 };
+
+export const socketRequest = async () => {};
